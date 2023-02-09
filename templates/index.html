@@ -1,0 +1,69 @@
+<!-- index.html for TEST thingy -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Survey</h1>
+  <p>This is our survey page {% if DEBUG %}in DEBUG MODE{% endif %}.</p>
+<div class="container mt-5">
+  <h2>Household Chores Survey</h2>
+  <form method="post">
+    <div class="form-group">
+      <label for="name_input">Name:</label>
+      <input type="text" class="form-control" id="name_input" placeholder="Enter your name" required>
+    </div>
+      <!--
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Chore</th>
+          <th>Importance</th>
+          <th>Competence</th>
+          <th>Comfort</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for chore in chores %}
+        <tr>
+          <td>{{ chore }}</td>
+          <td>
+            <select id="importance_select" class="form-control" required {% if DEBUG %} value="{{ random_importance }}" {% endif %}>
+                <option value="" disabled {% if not random_importance %}selected{% endif %} hidden> </option>
+                <option value="not_important" {% if random_importance == "not_important" %}selected{% endif %}>Not Important</option>
+                <option value="somewhat_important" {% if random_importance == "somewhat_important" %}selected{% endif %}>Somewhat Important</option>
+                <option value="important" {% if random_importance == "important" %}selected{% endif %}>Important</option>
+                <option value="very_important" {% if random_importance == "very_important" %}selected{% endif %}>Very Important</option>
+            </select>
+
+          </td>
+          <td>
+            <select id="competence_select" class="form-control" required {% if DEBUG %} value="{{ random_competence }}" {% endif %}>
+                <option value="" disabled {% if not random_competence %}selected{% endif %} hidden> </option>
+                <option value="cant_do_it" {% if random_competence == "cant_do_it" %}selected{% endif %}>I can't do it</option>
+                <option value="need_help" {% if random_competence == "need_help" %}selected{% endif %}>I can do it with help</option>
+                <option value="can_do_it_easily" {% if random_competence == "can_do_it_easily" %}selected{% endif %}>I can do it with ease</option>
+            </select>
+
+          </td>
+          <td>
+            <select id="comfort_select" class="form-control" required {% if DEBUG %} value="{{ random_comfort }}" {% endif %}>
+                <option value="" disabled {% if not random_comfort %}selected{% endif %} hidden> </option>
+                <option value="hate_it" {% if random_comfort == "hate_it" %}selected{% endif %}>I hate it</option>
+                <option value="dont_like_it" {% if random_comfort == "dont_like_it" %}selected{% endif %}>I don't like it</option>
+                <option value="neutral" {% if random_comfort == "neutral" %}selected{% endif %}>I'm neutral</option>
+                <option value="like_it" {% if random_comfort == "like_it" %}selected{% endif %}>I like it</option>
+                <option value="love_it" {% if random_comfort == "love_it" %}selected{% endif %}>I love it</option>
+            </select>
+
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+      -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
+
