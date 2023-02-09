@@ -8,13 +8,13 @@ app.debug = True
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        user_text = request.form["name_input"]
+        user_text = request.form["text"]
 
         with open("text.csv", "a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow([user_text])
 
-        return "Name saved!"
+        return "Text saved!"
 
     return render_template('index.html')
 
